@@ -1,9 +1,10 @@
 // Dependencies
 const express = require("express");
-
+var cors = require("cors");
 const app = express();
-const PORT = 3000;
+const PORT = 5000;
 
+app.use(cors());
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -49,13 +50,13 @@ app.get("/api/characters/:character", function (req, res) {
 
   console.log(chosen);
 
-  for (const i = 0; i < characters.length; i++) {
+  for (let i = 0; i < characters.length; i++) {
     if (chosen === characters[i].routeName) {
       return res.json(characters[i]);
     }
   }
 
-  return res.send("No character found");
+  return res.json({});
 });
 
 // Create New Characters - takes in JSON input
