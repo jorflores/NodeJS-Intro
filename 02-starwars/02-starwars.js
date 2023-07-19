@@ -3,7 +3,7 @@
 const express = require("express");
 
 const app = express();
-const PORT = 3000;
+const PORT = 5000;
 
 // Data
 const characters = [
@@ -36,8 +36,8 @@ app.get("/", function (req, res) {
   res.send("Welcome to the Star Wars Page!");
 });
 
-app.get("/:character", function (req, res) {
-  const chosen = req.params.character;
+app.get("/:personajes", function (req, res) {
+  const chosen = req.params.personajes;
 
   // What does this log?
   console.log(chosen);

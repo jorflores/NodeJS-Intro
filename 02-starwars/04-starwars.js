@@ -4,6 +4,7 @@ var cors = require("cors");
 const app = express();
 const PORT = 5000;
 
+// Cross - Origin Resource Sharing
 app.use(cors());
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
